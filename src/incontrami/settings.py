@@ -93,7 +93,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
 	'incontrami.dating',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -112,7 +112,7 @@ import logging
 logging.basicConfig(
     level = logging.DEBUG,
     format = '%(asctime)s %(levelname)s %(message)s',
-    filename = '/tmp/geniusloci.log',
+    filename = '/tmp/incontrami.log',
     filemode = 'w'
 )
 
