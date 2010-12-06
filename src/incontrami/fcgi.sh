@@ -1,8 +1,8 @@
 # Replace these three settings.
-PROJDIR="/home/ubuntu/incontrami/src/incontrami"
+PROJDIR="/home/ubuntu/Incontrami/src/incontrami"
 PIDFILE="$PROJDIR/mysite.pid"
 SOCKET="/home/ubuntu/incontrami.sock"
-export PYTHONPATH=/home/ubuntu/incontrami/src/:/var/django/
+export PYTHONPATH=/home/ubuntu/Incontrami/src/:/var/django/
 export DJANGO_SETTINGS_MODULE=incontrami.settings
 cd $PROJDIR
 if [ -f $PIDFILE ]; then
