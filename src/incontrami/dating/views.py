@@ -53,6 +53,7 @@ def loginfb(request):
 					error = 'AUTH_DISABLED'
 			else:
 				error = 'AUTH_FAILED'
+				return HttpResponse('cannot find user')
 		elif 'error_reason' in request.GET:
 			error = 'AUTH_DENIED'
 	
