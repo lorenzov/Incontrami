@@ -29,11 +29,11 @@ class FacebookBackend:
         user.email = profile['email']
         user.first_name = profile['first_name']
         user.last_name = profile['last_name']
-		profile = user.get_profile()
-		if profile['gender'] == 'male':
-			profile.sex = 'M'
-		else:
-			profile.sex = 'F'
+        profile = user.get_profile()
+        if profile['gender'] == 'male':
+            profile.sex = 'M'
+        else:
+            profile.sex = 'F'
 		profile.save()
         user.save()
 
