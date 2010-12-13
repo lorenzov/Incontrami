@@ -17,3 +17,10 @@ def game(request):
 		userprofile = UserProfile.objects.filter(sex__exact = 'F').order_by('?')[0]
 	return HttpResponseRedirect('/profile/' + str(userprofile.user.id))
 	return HttpResponse('game')
+	
+	
+def profile(request, id):
+	user = User.objects.get(pk = id)
+	c = RequestContext(request, {'user': user, })
+	t = loader.get_template('profile.html')
+	return HttpResponse(t.render(c))
