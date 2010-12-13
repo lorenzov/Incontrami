@@ -24,7 +24,7 @@ urlpatterns = patterns('',
 	(r'^game/$', 'incontrami.dating.gameviews.game'),
 	(r'^profile/(?P<id>\d+)/$', 'incontrami.dating.gameviews.profile'),
 	
-	(r'^login/$', 'incontrami.dating.views.loginview'),
+	(r'^login/$', 'incontrami.dating.views.loginfb'),
 	#mobile site
 	
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',
