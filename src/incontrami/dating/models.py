@@ -14,4 +14,12 @@ class FacebookUser(models.Model):
 
 class UserProfile(models.Model):
 	user = models.ForeignKey(User, unique = True, db_index = True)
+	sex = models.CharField(max_length = 1, default = 'F')
+	points = models.IntegerField(default = 0)
+	
+	
+class Like(models.Model):
+	liker = models.ForeignKey(User, related_name = 'liker')
+	liked = models.ForeignKey(User, related_name = 'likeds')
+	date = models.DateTimeField(auto_now_add = True)
 

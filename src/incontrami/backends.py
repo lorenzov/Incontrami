@@ -6,7 +6,7 @@ import urllib
 import simplejson 
 import md5
 
-from geniusloci.loc import models
+from incontrami.dating import models
 
 class FacebookBackend:
     

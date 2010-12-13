@@ -1,9 +1,11 @@
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
-from loc.views import *
+from dating.views import *
+from dating.gameviews import *
+
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
@@ -14,13 +16,14 @@ urlpatterns = patterns('',
     # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     
     # Uncomment the next line to enable the admin:
-    #(r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 	
 	(r'^$', 'incontrami.dating.views.index'),
-	
+	(r'^newuser/$', 'incontrami.dating.views.newuser'),
 	(r'^logout/$', 'incontrami.dating.views.logout_view'),
+	(r'^game/$', 'incontrami.dating.gameviews.game'),
 	
-	(r'^login/$', 'incontrami.dating.views.login'),
+	(r'^login/$', 'incontrami.dating.views.loginview'),
 	#mobile site
 	
 	(r'^static/(?P<path>.*)$', 'django.views.static.serve',

@@ -11,8 +11,8 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'incontrami.db',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'incontrami',                      # Or path to database file if using sqlite3.
         'USER': 'incontrami',                      # Not used with sqlite3.
         'PASSWORD': 'incontrami',                  # Not used with sqlite3.
         'HOST': '10.211.10.116',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -75,13 +75,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'incontrami.urls'
+ROOT_URLCONF = 'geniusloci.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-	'/Users/lorenzoviscanti/incontrami/src/templates', '/home/ubuntu/geniusloci/src/templates',
+	'/Users/lorenzoviscanti/geniusloci/src/templates', '/home/ubuntu/geniusloci/src/templates',
 )
 
 
@@ -97,7 +97,7 @@ INSTALLED_APPS = (
 )
 
 AUTHENTICATION_BACKENDS = (
-    'incontrami.backends.FacebookBackend',
+    'geniusloci.backends.FacebookBackend',
 )
 
 APP_ID = '145417192176510'
@@ -106,7 +106,7 @@ APP_SECRET = 'bb479280f4c5b3144dff92c770a5904a'
 FACEBOOK_APPLICATION_SECRET = 'bb479280f4c5b3144dff92c770a5904a' 
 API_KEY = 'a48c65eea66a5eff69116b32f1a1fc3a'
 FACEBOOK_API_KEY = 'a48c65eea66a5eff69116b32f1a1fc3a'
-AUTH_PROFILE_MODULE = 'dating.UserProfile'
+AUTH_PROFILE_MODULE = 'incontrami.dating.models.UserProfile'
 FACEBOOK_REDIRECT_URI = 'euproweb.eu/login'
 import logging
 logging.basicConfig(
