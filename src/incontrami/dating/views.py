@@ -23,9 +23,9 @@ def loginfb(request):
 	if request.GET:
 		if 'code' in request.GET:
 			args = {
-				'client_id': '169893959694532',
-				'redirect_uri': 'http://fbauth.rtl.it/login/',
-				'client_secret': '05f67b1b586b609c2cb46c19dfa74553',
+				'client_id': '145417192176510',
+				'redirect_uri': 'http://incontrami.euproweb.eu',
+				'client_secret': 'bb479280f4c5b3144dff92c770a5904a',
 				'code': request.GET['code'],
 			}
 			url = 'https://graph.facebook.com/oauth/access_token?' + urllib.urlencode(args)
@@ -56,7 +56,7 @@ def loginfb(request):
 		elif 'error_reason' in request.GET:
 			error = 'AUTH_DENIED'
 	
-	return HttpResponseRedirect('https://graph.facebook.com/oauth/authorize?client_id=169893959694532&redirect_uri=http://fbauth.rtl.it/login/&scope=publish_stream,email,user_birthday,user_location,user_hometown&display=popup')
+	return HttpResponseRedirect('https://graph.facebook.com/oauth/authorize?client_id=169893959694532&redirect_uri=http://incontrami.euproweb.eu/login/&scope=publish_stream,email,user_birthday,user_location,user_hometown&display=popup')
 
 
 
