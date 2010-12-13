@@ -22,6 +22,7 @@ urlpatterns = patterns('',
 	(r'^newuser/$', 'incontrami.dating.views.newuser'),
 	(r'^logout/$', 'incontrami.dating.views.logout_view'),
 	(r'^game/$', 'incontrami.dating.gameviews.game'),
+	(r'^profile/(?P<id>\d+)/$', 'incontrami.dating.gameviews.profile'),
 	
 	(r'^login/$', 'incontrami.dating.views.loginview'),
 	#mobile site

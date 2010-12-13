@@ -14,7 +14,7 @@ class FacebookUser(models.Model):
 
 class UserProfile(models.Model):
 	user = models.ForeignKey(User, unique = True, db_index = True)
-	sex = models.CharField(max_length = 1, default = 'F')
+	sex = models.CharField(max_length = 1, default = 'F', db_index = True)
 	points = models.IntegerField(default = 0)
 	
 	
