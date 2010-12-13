@@ -34,7 +34,7 @@ class FacebookBackend:
             profile.sex = 'M'
         else:
             profile.sex = 'F'
-		profile.save()
+        profile.save()
         user.save()
 
         try:
