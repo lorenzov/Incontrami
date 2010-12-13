@@ -1,0 +1,10 @@
+{%extends "base.html"%}
+{%block body%}
+
+<form method="post">
+	<input type="text" name="username"><br/>
+	<input type="password" name="password"/><br/>
+	<input type="submit" value="Invia">
+	{% csrf_token %}
+</form>
+{%endblock%}

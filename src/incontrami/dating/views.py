@@ -8,6 +8,60 @@ from django.views.decorators.vary import vary_on_headers
 from django.contrib.auth.models import *
 from incontrami.dating.models import *
 
+
+
+def loginfb(request):
+	error = None
+	logging.debug
+	if request.user.is_authenticated():
+		
+		
+	
+		return HttpResponseRedirect('/')#(t.render(c))
+
+	if request.GET:
+		if 'code' in request.GET:
+			args = {
+				'client_id': '169893959694532',
+				'redirect_uri': 'http://fbauth.rtl.it/login/',
+				'client_secret': '05f67b1b586b609c2cb46c19dfa74553',
+				'code': request.GET['code'],
+			}
+			url = 'https://graph.facebook.com/oauth/access_token?' + urllib.urlencode(args)
+			response = cgi.parse_qs(urllib.urlopen(url).read())
+			access_token = ''
+			try: 
+				access_token = response['access_token'][0]
+			except:
+				return HttpResponse(url)
+                
+
+			facebook_session = FacebookSession.objects.get_or_create(
+				access_token=access_token,
+			)[0]
+			facebook_session.save()
+			logging.debug('session')
+			user = auth.authenticate(token=access_token, request = request)
+			if user:
+				if user.is_active:
+					auth.login(request, user)
+					
+					
+					return HttpResponseRedirect('/game/')#(t.render(c))
+				else:
+					error = 'AUTH_DISABLED'
+			else:
+				error = 'AUTH_FAILED'
+		elif 'error_reason' in request.GET:
+			error = 'AUTH_DENIED'
+	
+	return HttpResponseRedirect('https://graph.facebook.com/oauth/authorize?client_id=169893959694532&redirect_uri=http://fbauth.rtl.it/login/&scope=publish_stream,email,user_birthday,user_location,user_hometown&display=popup')
+
+
+
+
+
+
 def newuser(request):
 	if request.GET:
 		username = request.GET['username']

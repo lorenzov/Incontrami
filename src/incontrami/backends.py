@@ -22,10 +22,19 @@ class FacebookBackend:
             user = auth_models.User.objects.get(username=profile['id'])
         except auth_models.User.DoesNotExist, e:
             user = auth_models.User.objects.create_user(profile['id'], '', password)
+            profile = UserProfile()
+            profile.user = user
+            profile.save()
    
         user.email = profile['email']
         user.first_name = profile['first_name']
         user.last_name = profile['last_name']
+		profile = user.get_profile()
+		if profile['gender'] == 'male':
+			profile.sex = 'M'
+		else:
+			profile.sex = 'F'
+		profile.save()
         user.save()
 
         try:
