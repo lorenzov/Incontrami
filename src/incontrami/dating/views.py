@@ -82,7 +82,9 @@ def newuser(request):
 		return HttpResponse(t.render(c))
 		
 def index(request):
-	return HttpResponse('home')
+	c = RequestContext(request, {})
+	t = loader.get_template('home.html')
+	return HttpResponse(t.render(c))
 	
 def loginview(request):
 	if request.POST:
