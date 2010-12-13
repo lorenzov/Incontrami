@@ -24,7 +24,7 @@ def loginfb(request):
 		if 'code' in request.GET:
 			args = {
 				'client_id': '145417192176510',
-				'redirect_uri': 'http://incontrami.euproweb.eu',
+				'redirect_uri': 'http://incontrami.euproweb.eu/login/',
 				'client_secret': 'bb479280f4c5b3144dff92c770a5904a',
 				'code': request.GET['code'],
 			}
