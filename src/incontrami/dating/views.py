@@ -56,7 +56,7 @@ def loginfb(request):
 		elif 'error_reason' in request.GET:
 			error = 'AUTH_DENIED'
 	
-	return HttpResponseRedirect('https://graph.facebook.com/oauth/authorize?client_id=169893959694532&redirect_uri=http://incontrami.euproweb.eu/login/&scope=publish_stream,email,user_birthday,user_location,user_hometown&display=popup')
+	return HttpResponseRedirect('https://graph.facebook.com/oauth/authorize?client_id=145417192176510&redirect_uri=http://incontrami.euproweb.eu/login/&scope=publish_stream,email,user_birthday,user_location,user_hometown&display=popup')
 
 
 
