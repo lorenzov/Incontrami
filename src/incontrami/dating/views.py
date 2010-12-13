@@ -8,6 +8,7 @@ from django.views.decorators.vary import vary_on_headers
 from django.contrib.auth.models import *
 from incontrami.dating.models import *
 import logging
+import cgi
 
 
 def loginfb(request):
